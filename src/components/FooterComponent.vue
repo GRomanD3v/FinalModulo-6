@@ -4,39 +4,26 @@
 
 <template>
 
-    <footer class="text-center text-lg-start bg-body-tertiary text-muted">
+    <footer class="text-center text-lg-start text-muted" style="background-color: #1d1210;">
         <!-- Section: Social media -->
         <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
             <!-- Left -->
             <div class="me-5 d-none d-lg-block">
-                <span>Get connected with us on social networks:</span>
+                <span></span>
             </div>
-            <!-- Left -->
 
-            <!-- Right -->
-            <div>
+            <div class="social-icons">
                 <a href="" class="me-4 text-reset">
-                    <i class="fab fa-facebook-f"></i>
+                    <i class="bi bi-instagram"></i>
                 </a>
-                <a href="" class="me-4 text-reset">
-                    <i class="fab fa-twitter"></i>
+                <a href="#" class="me-4 text-reset">
+                    <i class="bi bi-linkedin"></i>
                 </a>
-                <a href="" class="me-4 text-reset">
-                    <i class="fab fa-google"></i>
-                </a>
-                <a href="" class="me-4 text-reset">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="" class="me-4 text-reset">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="" class="me-4 text-reset">
-                    <i class="fab fa-github"></i>
+                <a href="#" class="me-4 text-reset">
+                    <i class="bi bi-github"></i>
                 </a>
             </div>
-            <!-- Right -->
         </section>
-        <!-- Section: Social media -->
 
         <!-- Section: Links  -->
         <section class="">
@@ -46,57 +33,35 @@
                     <!-- Grid column -->
                     <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                         <!-- Content -->
-                        <h6 class="text-uppercase fw-bold mb-4">
-                            <i class="fas fa-gem me-3"></i>Company name
-                        </h6>
+                        <h2 class="text-uppercase fw-bold mb-4">
+                            <i class="fas fa-gem me-3"></i>Vangod Chocolateria
+                        </h2>
                         <p>
-                            Here you can use rows and columns to organize your footer content. Lorem ipsum
-                            dolor sit amet, consectetur adipisicing elit.
+                            Productos de primerísima calidad, y que signifiquen una experiencia completa en torno al
+                            chocolate.
                         </p>
                     </div>
                     <!-- Grid column -->
 
                     <!-- Grid column -->
                     <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                        <!-- Links -->
+                        <!-- Links
                         <h6 class="text-uppercase fw-bold mb-4">
                             Products
                         </h6>
                         <p>
-                            <a href="#!" class="text-reset">Angular</a>
+                            <a href="#!" class="text-reset">Regalos Corporativos</a>
                         </p>
                         <p>
                             <a href="#!" class="text-reset">React</a>
-                        </p>
-                        <p>
-                            <a href="#!" class="text-reset">Vue</a>
-                        </p>
-                        <p>
-                            <a href="#!" class="text-reset">Laravel</a>
-                        </p>
+                        </p> -->
                     </div>
-                    <!-- Grid column -->
+
 
                     <!-- Grid column -->
                     <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                        <!-- Links -->
-                        <h6 class="text-uppercase fw-bold mb-4">
-                            Useful links
-                        </h6>
-                        <p>
-                            <a href="#!" class="text-reset">Pricing</a>
-                        </p>
-                        <p>
-                            <a href="#!" class="text-reset">Settings</a>
-                        </p>
-                        <p>
-                            <a href="#!" class="text-reset">Orders</a>
-                        </p>
-                        <p>
-                            <a href="#!" class="text-reset">Help</a>
-                        </p>
+
                     </div>
-                    <!-- Grid column -->
 
                     <!-- Grid column -->
                     <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
@@ -105,17 +70,14 @@
                         <p><i class="fas fa-home me-3"></i> Mall alto las condes local 06</p>
                         <p>
                             <i class="fas fa-envelope me-3"></i>
-                            info@chocolates.com
+                            info@chocolateriavangod.com
                         </p>
                         <p><i class="fas fa-phone me-3"></i> +569 578526987</p>
-                        
+
                     </div>
-                    <!-- Grid column -->
                 </div>
-                <!-- Grid row -->
             </div>
         </section>
-        <!-- Section: Links  -->
 
         <!-- Copyright -->
         <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
@@ -123,8 +85,26 @@
             <a class="text-reset fw-bold" href="https://mdbootstrap.com/">Grupo 6 Bootcamp UNAB</a>
         </div>
 
-
     </footer>
+
 </template>
 
-<style scoped></style>
+<style scoped>
+div {
+    color: white;
+}
+
+.social-icons {
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+}
+
+.social-icons a {
+    text-decoration: none;
+}
+
+.social-icons a:hover i {
+    transform: scale(1.2);
+    color: #f3c27e !important;
+}
+</style>
