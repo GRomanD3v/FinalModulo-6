@@ -10,21 +10,21 @@
     <div class="carousel-item active h-100">
       <img src="../assets/img/c-1.jpeg" class="d-block w-100 h-100 object-fit-cover" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <h5>First slide label</h5>
+        <h2>First slide label</h2>
         <p>Some representative placeholder content for the first slide.</p>
       </div>
     </div>
     <div class="carousel-item h-100">
       <img src="../assets/img/c-2.jpeg" class="d-block w-100 h-100 object-fit-cover" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <h5>Second slide label</h5>
+        <h2>Second slide label</h2>
         <p>Some representative placeholder content for the second slide.</p>
       </div>
     </div>
     <div class="carousel-item h-100">
       <img src="../assets/img/c-3.jpeg" class="d-block w-100 h-100 object-fit-cover" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <h5>Third slide label</h5>
+        <h2>Third slide label</h2>
         <p>Some representative placeholder content for the third slide.</p>
       </div>
     </div>
