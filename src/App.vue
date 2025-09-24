@@ -8,7 +8,6 @@ import { RouterView } from 'vue-router'
 <template>
     <Navbar />
     <Carrousel />
-    <RouterView />
     <FooterComponent/>
-
+    <RouterView />
 </template>
