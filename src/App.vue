@@ -7,6 +7,5 @@ import { RouterView } from 'vue-router'
 <template>
     <Navbar />
     <RouterView />
-    <Carrousel />
 
 </template>
