@@ -1,6 +1,8 @@
 <script setup>
-import Carrousel from '../components/Carrousel.vue';
 import Navbar from '../components/Navbar.vue';
+import Carrousel from '../components/Carrousel.vue';
+
 </script>
 <template>
+<Carrousel />
 </template>

@@ -1,3 +1,17 @@
+<script setup>
+import { useRouter } from 'vue-router';
+import { useAuthStore } from '../store/AuthStore';
+
+const router = useRouter();
+const authStore = useAuthStore();
+
+const handleLogout = () =>  {
+    authStore.logout();
+    router.push('/Login');
+};
+
+</script>
+
 <template>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
@@ -14,7 +28,8 @@
                 <router-link to="/" class="nav-link">Inicio</router-link>
             </li>
             <li class="nav-item">
-                <router-link to="/Login" class="nav-link">Login</router-link>
+                <router-link v-if="!authStore.isLoggedIn" to="/Login" class="nav-link">Login</router-link>
+                <a v-else class="nav-link" href="#" @click.prevent="handleLogout">Hola, {{ authStore.user.name }} (Logout)</a>
             </li>
           </ul>
         </div>
