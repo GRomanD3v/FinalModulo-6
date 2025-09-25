@@ -1,5 +1,5 @@
 const validUser = {
-    email: "usuario1@mitienda.com",
+    email: "usuario@mitienda.com",
     password: "123456",
     name: "Usuario"
 };
