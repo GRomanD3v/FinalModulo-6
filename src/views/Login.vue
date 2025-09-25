@@ -39,7 +39,7 @@ const handleLogin = async () => {
       <div class="row justify-content-center">
         <div class="col-md-6">
           <div class="login-box p-4">
-            <h2 class="text-center mb-4">Iniciar Sesión</h2>
+            <h2 class="text-center mb-4" style="color: black;">Iniciar Sesión</h2>
             <form @submit.prevent="handleLogin">
               <div v-if="errorMessage" class="alert alert-danger" role="alert">
                 {{ errorMessage }}
@@ -74,7 +74,7 @@ const handleLogin = async () => {
                 />
               </div>
 
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn" style="background-color: saddlebrown; color:white">Enviar</button>
             </form>
           </div>
         </div>
@@ -107,7 +107,7 @@ const handleLogin = async () => {
 }
 .login-box {
   margin-top: 10em;
-  background: rgba(255, 255, 255, 0.447);
+  background: rgba(233, 233, 233, 0.445);
   border-radius: 20px;
   border: 1px solid rgba(43, 43, 43, 0.3);
   box-shadow: 0 4px 16px rgba(0,0,0,0.08);
