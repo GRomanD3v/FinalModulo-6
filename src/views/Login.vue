@@ -4,6 +4,7 @@ import { login } from "../services/Auth.js";
 import { useRouter } from "vue-router";
 import { useAuthStore } from "../store/AuthStore.js";
 
+
 const name = ref("");
 const email = ref("");
 const password = ref("");
@@ -81,6 +82,7 @@ const handleLogin = async () => {
       </div>
     </div>
   </div>
+
 </template>
 
 <style scoped>

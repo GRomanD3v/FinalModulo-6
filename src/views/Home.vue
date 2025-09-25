@@ -1,6 +1,7 @@
 <script setup>
 import Destacados from '../components/Destacados.vue';
 import Carrousel from '../components/Carrousel.vue';
+import Products from "../components/Products.vue";
 
 </script>
 
@@ -8,5 +9,7 @@ import Carrousel from '../components/Carrousel.vue';
 
     <Carrousel />
     <Destacados />
+    <Products/>
+
 
 </template>
