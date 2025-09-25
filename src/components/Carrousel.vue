@@ -7,25 +7,28 @@
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
   </div>
   <div class="carousel-inner" style="height:500px;">
-    <div class="carousel-item active h-100">
+    <div class="carousel-item active h-100" >
       <img src="../assets/img/c-1.jpeg" class="d-block w-100 h-100 object-fit-cover" alt="...">
+      <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
       <div class="carousel-caption d-none d-md-block">
-        <h2>First slide label</h2>
-        <p>Some representative placeholder content for the first slide.</p>
+        <h2>La perfección se moldea en cacao puro y selecto.</h2>
+        <p>El arte de la chocolatería en cada pieza.</p>
       </div>
     </div>
     <div class="carousel-item h-100">
       <img src="../assets/img/c-2.jpeg" class="d-block w-100 h-100 object-fit-cover" alt="...">
+      <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
       <div class="carousel-caption d-none d-md-block">
-        <h2>Second slide label</h2>
-        <p>Some representative placeholder content for the second slide.</p>
+        <h2>Disfrute el lujo de un momento Vangod.</h2>
+        <p>Un viaje al placer más profundo y sensorial.</p>
       </div>
     </div>
     <div class="carousel-item h-100">
       <img src="../assets/img/c-3.jpeg" class="d-block w-100 h-100 object-fit-cover" alt="...">
+      <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
       <div class="carousel-caption d-none d-md-block">
-        <h2>Third slide label</h2>
-        <p>Some representative placeholder content for the third slide.</p>
+        <h2>Descubra nuestras Colecciones de Edición Limitada.</h2>
+        <p>Un lujo artesanal solo para conocedores.</p>
       </div>
     </div>
   </div>
@@ -39,3 +42,9 @@
   </button>
 </div>
 </template>
+
+<style>
+.carousel-inner {
+background: rgba(0,0,0,0.35);
+}
+</style>
