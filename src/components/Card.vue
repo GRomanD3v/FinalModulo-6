@@ -69,8 +69,8 @@ const props = defineProps({
 
                 <!-- Precio y stock -->
                 <div class="d-flex justify-content-between align-items-center mt-auto">
-                    <h4 class="text-primary">{{ producto.precio }}</h4>
-                    <small class="text-muted">Stock: {{ producto.stock }}</small>
+                    <h4 class="text-primary">${{ producto.precio }}</h4>
+                    <small class="text-muted">Stock:{{ producto.stock }}</small>
                 </div>
 
                 <!-- Botón de acción -->
