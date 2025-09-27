@@ -8,7 +8,7 @@ export async function listProducts() {
             nombre: "Bombones chocolate amargo",
             descripcion: "Bombones de frambueza con chocolate biter amargo 60%",
             precio: 23990,
-            urlImagen: "",
+            urlImagen: "https://www.liberte.cl/cdn/shop/products/41.45821337copia.jpg?v=1678928109&width=1946",
             stock: 3,
             categoria: "Chocolate amargo",
             etiqueta: "500gr"
@@ -115,11 +115,11 @@ export async function listProducts() {
         },
         {
             id: 12,
-            nombre: "Bombones de licor surtidos",
+            nombre: "Bombones de licor surtidos hallowen",
             descripcion: "Bombones rellenos de licores finos: coñac, whisky y ron",
             precio: 34900,
             urlImagen: "https://ejemplo.com/bombones-licor.jpg",
-            stock: 6,
+            stock: 10,
             categoria: "Bombones",
             etiqueta: "18 unidades"
         }

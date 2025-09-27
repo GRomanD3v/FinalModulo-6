@@ -51,7 +51,7 @@ const props = defineProps({
      <div class="col-md-4 col-lg-3 mb-4">
         <div class="card h-100 shadow-sm">
             <!-- Imagen del producto -->
-            <img :src="urlImagen" class="card-img-top" alt="Bombones chocolate amargo"
+            <img :src="producto.urlImagen" class="card-img-top" alt="Bombones chocolate amargo"
                 style="height: 200px; object-fit: cover;">
 
             <div class="card-body d-flex flex-column">
