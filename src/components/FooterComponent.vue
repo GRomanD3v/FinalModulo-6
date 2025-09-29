@@ -1,5 +1,4 @@
 <script setup>
-
 </script>
 
 <template>
@@ -26,7 +25,7 @@
         </section>
 
         <!-- Section: Links  -->
-        <section class="">
+        <section class="d-flex">
             <div class="container text-center text-md-start mt-5">
                 <!-- Grid row -->
                 <div class="row mt-3">
@@ -59,7 +58,6 @@
                         </p> 
                     </div>
 
-
                     <!-- Grid column -->
                     <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
 
@@ -74,7 +72,7 @@
                             <i class="fas fa-envelope me-3"></i>
                             info@chocolateriavangod.com
                         </p>
-                        <p><i class="fas fa-phone me-3"></i> +569 578526987</p>
+                        <p><i class="fas fa-phone me-3"></i> +569 000000000</p>
 
                     </div>
                 </div>

@@ -7,7 +7,7 @@ const messageTexts = ref([
     },
     {
         principalText : '3x2 EN GALLETAS',
-        secondaryText : 'Solo por hoy - No te lo pierdas'
+        secondaryText : 'No te lo pierdas'
     },
     {
         principalText : 'RETIRA EN TIENDA GRATIS',

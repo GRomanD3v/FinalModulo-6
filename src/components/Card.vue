@@ -55,6 +55,12 @@ function agregar() {
 const urlImagen = props.producto.urlImagen || 'https://ejemplo.com/pralines-surtidos.jpg';
 const stock = props.producto.stock || 1;
 
+// Formatear precio chileno
+function formatoPrecio(precio) {
+    if (!precio) return '$0';
+    return '$' + precio.toLocaleString('es-CL');
+}
+
 </script>
 
 
@@ -81,7 +87,7 @@ const stock = props.producto.stock || 1;
 
                 <!-- Precio y stock -->
                 <div class="d-flex justify-content-between align-items-center mt-auto">
-                    <h4 class="text-primary">${{ producto.precio }}</h4>
+                    <h4 class="text-primary">{{ formatoPrecio(producto.precio)}}</h4>
                     <small class="text-muted">Stock:{{ producto.stock }}</small>
                 </div>
 
