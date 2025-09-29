@@ -24,7 +24,7 @@ function agregarAlCarrito(producto) {
     <h3 v-if="props.termino" class="text-center my-4">
         Resultados para: "{{ props.termino }}"
     </h3>
-    <div class="d-flex products-container">
+    <div class="products-container">
       <div class="row">
         <Card v-for="producto in productos" 
          :key="producto.id" 

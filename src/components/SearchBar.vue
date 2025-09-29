@@ -37,8 +37,5 @@ const realizarBusqueda = () => {
 </template>
 
 <style scoped>
-.card img {
-    max-height: 120px;
-    object-fit: contain;
-}
+
 </style>

@@ -47,8 +47,10 @@ const productosFiltrados = computed(()=>{
 <template>
 
 	<Carrousel />
-	<SearchBar @buscar="handleBusqueda" />
 	<Destacados />
+	<h2 class="text-center m-4">Nuestros Productos</h2>
+
+	<SearchBar class="mb-5"  @buscar="handleBusqueda" />
 
 	<div class="container">
 		
@@ -57,8 +59,8 @@ const productosFiltrados = computed(()=>{
 			:productos="productosFiltrados"
 			@agregar-al-carrito="props.onAgregarAlCarrito" />
 		</div>
-		<Ayuda/>
 	</div>
+	<Ayuda/>
 
 
 </template>

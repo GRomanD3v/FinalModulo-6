@@ -11,7 +11,7 @@ export async function listProducts() {
             descripcion: "Bombones de frambueza con chocolate biter amargo 60%",
             precio: 23990,
             urlImagen: `${host}public/cards/1.jpeg`,
-            stock: 3,
+            stock: 2,
             categoria: "Chocolate amargo",
             etiqueta: "500gr"
         },

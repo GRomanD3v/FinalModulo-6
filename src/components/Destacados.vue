@@ -11,7 +11,7 @@
                             <img src="/public/cards/12.jpeg" alt="Calugas Macizos" class="product-img">
                             <div class="product-overlay">
                                 <div class="overlay-content">
-                                    <h5 class="product-title">Bombones de licor surtidos hallowen</h5>
+                                    <h5 class="product-title">Bombones hallowen</h5>
                                     <p>Deliciosos Bombones de licor surtidos hallowen</p>
                                     <button class="btn btn-light">Ver más</button>
                                 </div>

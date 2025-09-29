@@ -2,8 +2,8 @@
 
 <template>
       <!-- Sección de Ayuda -->
-    <section class="help-section mt-5">
-        <div class="container text-center pb-5 m-3">
+    <section class="help-section text-center mt-5">
+        <div class="pb-5 m-3">
             <h2>¿Quieres Ayuda?</h2>
             <p class="lead">Estamos aquí para ayudarte a encontrar lo que buscas.</p>
             <button class="btn" style="background-color: saddlebrown; color:white">Contáctanos</button>
