@@ -1,12 +1,21 @@
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted, watch } from 'vue';
 
 import Banner from './components/Banner.vue';
 import Navbar from './components/Navbar.vue';
 import { RouterView } from 'vue-router'
 import FooterComponent from './components/FooterComponent.vue';
 
+import { useCarritoStore } from './store/carrito'
+const carritoStore = useCarritoStore()
+
 const carrito = ref([]);
+
+// Cargar carrito desde Pinia/localStorage al iniciar
+onMounted(() => {
+  carritoStore.cargar()
+  carrito.value = [...carritoStore.items]  // copiar al ref original
+})
 
 // Funciones del carrito
 function agregarAlCarrito(producto) {
@@ -48,6 +57,11 @@ function disminuirCantidad(index) {
         carrito.value.splice(index, 1); // Elimina producto si llega a cero
     }
 }
+
+// Guardar automáticamente en Pinia cada vez que cambia carrito
+watch(carrito, (newValue) => {
+  carritoStore.guardar(newValue)
+}, { deep: true })
 
 // Computed para total y contador del carrito
 const totalCarrito = computed(() =>
