@@ -1,13 +1,16 @@
 <script setup>
 
 import Card from './Card.vue';
-import { listProducts } from '../services/api';
-import { ref, onMounted } from 'vue';
 
-const productos = ref([]);
-
-onMounted(async () => {
-    productos.value = await listProducts();
+const props = defineProps({
+    productos: {
+        type: Array,
+        required: true //
+    },
+    termino: { 
+        type: String, 
+        default: '' 
+    } 
 });
 
 const emit = defineEmits(['agregar-al-carrito']);
@@ -19,6 +22,9 @@ function agregarAlCarrito(producto) {
 </script>
 
 <template>
+    <h3 v-if="props.termino" class="text-center my-4">
+        Resultados para: "{{ props.termino }}"
+    </h3>
     <div class="products-container">
     <Card v-for="producto in productos" 
     :key="producto.id" 
