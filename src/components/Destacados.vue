@@ -8,17 +8,17 @@
                 <div class="col-md-6 col-lg-4">
                     <div class="card product-card">
                         <div class="product-img-container">
-                            <img src="/src/assets/img/c-3.jpeg" alt="Calugas Macizos" class="product-img">
+                            <img src="/public/cards/12.jpeg" alt="Calugas Macizos" class="product-img">
                             <div class="product-overlay">
                                 <div class="overlay-content">
-                                    <h5 class="product-title">Calugas Macizos</h5>
-                                    <p>Deliciosos y tradicionales calugas macizos</p>
+                                    <h5 class="product-title">Bombones de licor surtidos hallowen</h5>
+                                    <p>Deliciosos Bombones de licor surtidos hallowen</p>
                                     <button class="btn btn-light">Ver más</button>
                                 </div>
                             </div>
                         </div>
                         <div class="card-body text-center">
-                            <h5 class="card-title">Calugas Macizos</h5>
+                            <h5 class="card-title">Bombones de licor surtidos hallowen</h5>
                             <p class="card-text">Nuestra selección de calugas macizos tradicionales.</p>
                         </div>
                     </div>
@@ -152,11 +152,5 @@
             background-color: #d4a76a;
         }
         
-        .help-section {
-            background-color: #fff;
-            padding: 20px 0;
-            margin-top: 40px;
-            border-top: 1px solid #eee;
-        }
 
 </style>

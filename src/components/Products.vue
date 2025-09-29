@@ -20,6 +20,7 @@ function agregarAlCarrito(producto) {
 
 <template>
     <div class="d-flex products-container">
+        
         <div class="row">
            <Card v-for="producto in productos" 
     :key="producto.id" 
