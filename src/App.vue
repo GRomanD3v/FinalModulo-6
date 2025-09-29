@@ -63,25 +63,11 @@ const contadorCarrito = computed(() =>
 </script>
 
 <template>
-    <Banner/>
-    <Navbar 
-     :contadorCarrito="contadorCarrito" 
-     :carrito="carrito"
-     :total="totalCarrito"
-     @eliminar="eliminarDelCarrito"
-     @vaciar="vaciarCarrito"
-     @comprar="comprarCarrito"
-     @aumentar="aumentarCantidad"
-     @disminuir="disminuirCantidad"
-    />
-    <RouterView 
-        v-slot="{ Component}"
-        >
-        <component
-        :is="Component"
-        :carrito="Carrito"
-        :onAgregarAlCarrito="agregarAlCarrito"      
-        />
+    <Banner />
+    <Navbar :contadorCarrito="contadorCarrito" :carrito="carrito" :total="totalCarrito" @eliminar="eliminarDelCarrito"
+        @vaciar="vaciarCarrito" @comprar="comprarCarrito" @aumentar="aumentarCantidad" @disminuir="disminuirCantidad" />
+    <RouterView v-slot="{ Component }">
+        <component :is="Component" :carrito="Carrito" :onAgregarAlCarrito="agregarAlCarrito" />
     </RouterView>
-    <FooterComponent/>
+    <FooterComponent />
 </template>

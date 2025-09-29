@@ -20,16 +20,18 @@ function agregarAlCarrito(producto) {
 }
 
 </script>
-
 <template>
     <h3 v-if="props.termino" class="text-center my-4">
         Resultados para: "{{ props.termino }}"
     </h3>
-    <div class="products-container">
-    <Card v-for="producto in productos" 
-    :key="producto.id" 
-    :producto="producto"
-    @agregar="agregarAlCarrito"/>
+    <div class="d-flex products-container">
+      <div class="row">
+        <Card v-for="producto in productos" 
+         :key="producto.id" 
+         :producto="producto"
+         @agregar="agregarAlCarrito"/>
+                
+       </div>
     </div>
 
 </template>

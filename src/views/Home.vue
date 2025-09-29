@@ -4,6 +4,7 @@ import Carrousel from '../components/Carrousel.vue';
 import SearchBar from '../components/SearchBar.vue';
 import Destacados from '../components/Destacados.vue';
 import Products from "../components/Products.vue";
+import Ayuda from '../components/Ayuda.vue';
 
 //importar la funcion de la API 
 import { listProducts } from '../services/api';
@@ -50,18 +51,13 @@ const productosFiltrados = computed(()=>{
 	<Destacados />
 
 	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<h2 class="text-center">
-					Nuestros Productos
-				</h2>
-			</div>
-		</div>
+		
 		<div>
 			<Products 
 			:productos="productosFiltrados"
 			@agregar-al-carrito="props.onAgregarAlCarrito" />
 		</div>
+		<Ayuda/>
 	</div>
 
 
