@@ -35,7 +35,7 @@ const handleLogin = async () => {
 
 <template>
   <div class="login-bg-container">
-    <img src="../assets/img/c-3.jpeg" alt="Fondo" class="bg-blur-img" />
+    <img src="../assets/img/c-3.jpeg" alt="Fondo" class="bg-blur-img img-fluid" />
     <div class="container mt-5">
       <div class="row justify-content-center">
         <div class="col-md-6">
