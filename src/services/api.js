@@ -1,4 +1,6 @@
 
+const host = import.meta.env.VITE_HOST
+
 
 export async function listProducts() {
     await delay(500);
@@ -8,7 +10,7 @@ export async function listProducts() {
             nombre: "Bombones chocolate amargo",
             descripcion: "Bombones de frambueza con chocolate biter amargo 60%",
             precio: 23990,
-            urlImagen: "https://www.liberte.cl/cdn/shop/products/41.45821337copia.jpg?v=1678928109&width=1946",
+            urlImagen: `${host}public/cards/1.jpeg`,
             stock: 3,
             categoria: "Chocolate amargo",
             etiqueta: "500gr"
@@ -18,7 +20,7 @@ export async function listProducts() {
             nombre: "Tableta chocolate con almendras",
             descripcion: "Tableta de chocolate negro 70% con almendras tostadas",
             precio: 18500,
-            urlImagen: "https://ejemplo.com/chocolate-almendras.jpg",
+            urlImagen: `${host}public/cards/2.jpeg`,
             stock: 15,
             categoria: "Chocolate negro",
             etiqueta: "200gr"
@@ -28,7 +30,7 @@ export async function listProducts() {
             nombre: "Pralinés surtidos",
             descripcion: "Selección de pralinés rellenos de avellana y nuez",
             precio: 32750,
-            urlImagen: "https://ejemplo.com/pralines-surtidos.jpg",
+            urlImagen: `${host}public/cards/3.jpeg`,
             stock: 8,
             categoria: "Bombones",
             etiqueta: "250gr"
@@ -38,7 +40,7 @@ export async function listProducts() {
             nombre: "Chocolate blanco con frutos rojos",
             descripcion: "Tableta de chocolate blanco premium con trozos de frutos rojos liofilizados",
             precio: 21300,
-            urlImagen: "https://ejemplo.com/chocolate-blanco-frutos.jpg",
+            urlImagen: `${host}public/cards/4.jpeg`,
             stock: 12,
             categoria: "Chocolate blanco",
             etiqueta: "180gr"
@@ -48,7 +50,7 @@ export async function listProducts() {
             nombre: "Caja regalo chocolates finos",
             descripcion: "Elegante caja surtida con los mejores chocolates de la casa",
             precio: 45900,
-            urlImagen: "https://ejemplo.com/caja-regalo.jpg",
+            urlImagen: `${host}public/cards/5.jpeg`,
             stock: 5,
             categoria: "Regalos",
             etiqueta: "750gr"
@@ -58,7 +60,7 @@ export async function listProducts() {
             nombre: "Trufas de chocolate con champagne",
             descripcion: "Exquisitas trufas rellenas de ganache con champagne francés",
             precio: 28450,
-            urlImagen: "https://ejemplo.com/trufas-champagne.jpg",
+            urlImagen: `${host}public/cards/6.jpeg`,
             stock: 10,
             categoria: "Trufas",
             etiqueta: "12 unidades"
@@ -68,7 +70,7 @@ export async function listProducts() {
             nombre: "Tableta chocolate con sal marina",
             descripcion: "Chocolate negro 65% con escamas de sal marina del Atlántico",
             precio: 19750,
-            urlImagen: "https://ejemplo.com/chocolate-sal-marina.jpg",
+            urlImagen: `${host}public/cards/7.jpeg`,
             stock: 18,
             categoria: "Chocolate negro",
             etiqueta: "150gr"
@@ -78,7 +80,7 @@ export async function listProducts() {
             nombre: "Bombones de café y cardamomo",
             descripcion: "Bombones artesanales con relleno de café arábigo y cardamomo",
             precio: 26800,
-            urlImagen: "https://ejemplo.com/bombones-cafe-cardamomo.jpg",
+            urlImagen: `${host}public/cards/8.jpeg`,
             stock: 7,
             categoria: "Bombones",
             etiqueta: "300gr"
@@ -88,7 +90,7 @@ export async function listProducts() {
             nombre: "Chocolate con naranja confitada",
             descripcion: "Tableta de chocolate con trozos de naranja confitada en almíbar",
             precio: 17950,
-            urlImagen: "https://ejemplo.com/chocolate-naranja.jpg",
+            urlImagen: `${host}public/cards/9.jpeg`,
             stock: 14,
             categoria: "Chocolate con frutas",
             etiqueta: "200gr"
@@ -98,7 +100,7 @@ export async function listProducts() {
             nombre: "Selección premium bean-to-bar",
             descripcion: "Chocolate single origin de grano fino, proceso bean-to-bar",
             precio: 38200,
-            urlImagen: "https://ejemplo.com/bean-to-bar.jpg",
+            urlImagen: `${host}public/cards/10.jpeg`,
             stock: 4,
             categoria: "Chocolate premium",
             etiqueta: "250gr"
@@ -108,7 +110,7 @@ export async function listProducts() {
             nombre: "Hot chocolate mix gourmet",
             descripcion: "Mezcla premium para chocolate caliente con especias",
             precio: 15600,
-            urlImagen: "https://ejemplo.com/hot-chocolate-mix.jpg",
+            urlImagen: `${host}public/cards/11.jpeg`,
             stock: 22,
             categoria: "Chocolate en polvo",
             etiqueta: "400gr"
@@ -118,7 +120,7 @@ export async function listProducts() {
             nombre: "Bombones de licor surtidos hallowen",
             descripcion: "Bombones rellenos de licores finos: coñac, whisky y ron",
             precio: 34900,
-            urlImagen: "https://ejemplo.com/bombones-licor.jpg",
+            urlImagen: `${host}public/cards/12.jpeg`,
             stock: 10,
             categoria: "Bombones",
             etiqueta: "18 unidades"

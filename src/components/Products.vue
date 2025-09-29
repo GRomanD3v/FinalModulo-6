@@ -19,11 +19,14 @@ function agregarAlCarrito(producto) {
 </script>
 
 <template>
-    <div class="products-container">
-    <Card v-for="producto in productos" 
+    <div class="d-flex products-container">
+        <div class="row">
+           <Card v-for="producto in productos" 
     :key="producto.id" 
     :producto="producto"
     @agregar="agregarAlCarrito"/>
-    </div>
+                
+            </div>
+        </div>
 
 </template>

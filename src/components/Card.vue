@@ -52,10 +52,8 @@ function agregar() {
 }
 
 //Valores por defecto si no vienen en producto
-const urlImagen = props.producto.urlImagen || 'https://ejemplo.com/pralines-surtidos.jpg'; 
+const urlImagen = props.producto.urlImagen || 'https://ejemplo.com/pralines-surtidos.jpg';
 const stock = props.producto.stock || 1;
-
-
 
 </script>
 
@@ -63,16 +61,15 @@ const stock = props.producto.stock || 1;
 
 <template>
 
-     <div class="col-md-4 col-lg-3 mb-4">
+    <div class="col-md-4 col-lg-3 mb-4">
         <div class="card h-100 shadow-sm">
             <!-- Imagen del producto -->
-            <img :src="producto.urlImagen" alt="producto.nombre"
-                style="height: 200px; object-fit: cover;">
+            <img :src="producto.urlImagen" alt="producto.nombre" style="height: 200px; object-fit: cover;">
 
             <div class="card-body d-flex flex-column">
                 <!-- Categoría y etiqueta -->
                 <div class="d-flex justify-content-between align-items-center mb-2">
-                    <span class="badge bg-secondary" style="font-size: 12px;" >{{ producto.categoria }}</span>
+                    <span class="badge bg-secondary" style="font-size: 12px;">{{ producto.categoria }}</span>
                     <span class="badge bg-light text-dark" style="font-size: 11px;">{{ producto.etiqueta }}</span>
                 </div>
 
@@ -99,8 +96,6 @@ const stock = props.producto.stock || 1;
 
 
 <style scoped>
-
-
 .card {
     transition: transform 0.2s;
     border: 1px solid #e0e0e0;
@@ -108,7 +103,7 @@ const stock = props.producto.stock || 1;
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
 }
 
 .card-img-top {

@@ -20,12 +20,13 @@ const props = defineProps({
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<h2 class="text-center">
+				<h2 class="text-center ">
 					Nuestros Productos
 				</h2>
 			</div>
 		</div>
 		<div>
+		
 			<Products @agregar-al-carrito="props.onAgregarAlCarrito" />
 		</div>
 	</div>

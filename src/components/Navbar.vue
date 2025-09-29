@@ -35,7 +35,7 @@ const emit = defineEmits(['eliminar', 'vaciar', 'comprar', 'aumentar', 'disminui
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <h1 class="animated-title">
+                <h1 class="text-uppercase animated-title">
                     <span>C</span>
                     <span>h</span>
                     <span>o</span>
