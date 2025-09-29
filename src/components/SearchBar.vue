@@ -1,12 +1,12 @@
 <script setup>
 import { ref } from 'vue';
 
-const emit = defineEmits(['Buscar']);
+const emit = defineEmits(['buscar']);
 
 const busqueda = ref("");
 
 const realizarBusqueda = () => {
-    emit('Buscar', busqueda.value);
+    emit('buscar', busqueda.value);
 };
 </script>
 
