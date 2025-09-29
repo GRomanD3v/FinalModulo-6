@@ -1,10 +1,10 @@
 <script setup>
 import { ref, computed } from 'vue';
 
-import FooterComponent from './components/FooterComponent.vue';
+import Banner from './components/Banner.vue';
 import Navbar from './components/Navbar.vue';
 import { RouterView } from 'vue-router'
-import Banner from './components/Banner.vue';
+import FooterComponent from './components/FooterComponent.vue';
 
 const carrito = ref([]);
 
@@ -49,16 +49,12 @@ function disminuirCantidad(index) {
     }
 }
 
-// Computed
+// Computed para total y contador del carrito
 const totalCarrito = computed(() =>
     carrito.value.reduce((acc, item) => acc + item.precio * item.cantidad, 0)
 );
 const contadorCarrito = computed(() =>
     carrito.value.reduce((acc, item) => acc + item.cantidad, 0)
-);
-
-const productosAMostrar = computed(() =>
-    mostrarTodos.value ? productos.value : featuredProducts.value
 );
 
 
@@ -78,6 +74,14 @@ const productosAMostrar = computed(() =>
      @aumentar="aumentarCantidad"
      @disminuir="disminuirCantidad"
     />
-    <RouterView />
+    <RouterView 
+        v-slot="{ Component}"
+        >
+        <component
+        :is="Component"
+        :carrito="Carrito"
+        :onAgregarAlCarrito="agregarAlCarrito"      
+        />
+    </RouterView>
     <FooterComponent/>
 </template>

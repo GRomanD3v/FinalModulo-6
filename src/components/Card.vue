@@ -38,9 +38,24 @@
 
 const props = defineProps({
     producto: {
-        type: Object
+        type: Object,
+        required: true
     }
 })
+
+
+const emit = defineEmits(['agregar']);
+
+// Agregar al carrito
+function agregar() {
+    emit('agregar', props.producto);
+}
+
+//Valores por defecto si no vienen en producto
+const urlImagen = props.producto.urlImagen || 'https://ejemplo.com/pralines-surtidos.jpg'; 
+const stock = props.producto.stock || 1;
+
+
 
 </script>
 
@@ -51,7 +66,7 @@ const props = defineProps({
      <div class="col-md-4 col-lg-3 mb-4">
         <div class="card h-100 shadow-sm">
             <!-- Imagen del producto -->
-            <img :src="urlImagen" class="card-img-top" alt="Bombones chocolate amargo"
+            <img :src="producto.urlImagen" alt="producto.nombre"
                 style="height: 200px; object-fit: cover;">
 
             <div class="card-body d-flex flex-column">
@@ -75,7 +90,7 @@ const props = defineProps({
 
                 <!-- Botón de acción -->
                 <div class="d-grid gap-2 mt-3">
-                    <button class="btn btn-primary btn-sm">Agregar al carrito</button>
+                    <button class="btn btn-primary btn-sm" @click="agregar">Agregar al carrito</button>
                 </div>
             </div>
         </div>

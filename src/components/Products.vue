@@ -10,11 +10,20 @@ onMounted(async () => {
     productos.value = await listProducts();
 });
 
+const emit = defineEmits(['agregar-al-carrito']);
+
+function agregarAlCarrito(producto) {
+    emit('agregar-al-carrito', producto)
+}
+
 </script>
 
 <template>
-
-    <Card v-for="producto in productos" :producto="producto" />
-
+    <div class="products-container">
+    <Card v-for="producto in productos" 
+    :key="producto.id" 
+    :producto="producto"
+    @agregar="agregarAlCarrito"/>
+    </div>
 
 </template>

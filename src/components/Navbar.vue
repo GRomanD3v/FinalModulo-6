@@ -249,6 +249,7 @@ const emit = defineEmits(['eliminar', 'vaciar', 'comprar', 'aumentar', 'disminui
 .custom-offcanvas {
   width: 600px;
   max-width: 100%;
+  height: 100%;
 
 }
 
@@ -270,6 +271,8 @@ const emit = defineEmits(['eliminar', 'vaciar', 'comprar', 'aumentar', 'disminui
 
 .offcanvas-body{
     padding-top: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 
