@@ -46,7 +46,7 @@ El componente principal para la visualización es Card.vue, el cual cumple con l
 ---
 ### 2. Gestión de Estado y Persistencia (Pinia)
 
-Se utilizó Pinia para centralizar la información clave del usuario y el carrito.
+Se utilizó Pinia para centralizar la información clave del usuario y del carrito.
 - store/carrito.js: Implementa un Store que gestiona la lista de productos (items) del carrito.
     - Persistencia: Utiliza localStorage mediante las acciones guardar() y cargar() para que el carrito mantenga su estado incluso si el usuario recarga la página.
 
@@ -79,9 +79,17 @@ La funcionalidad de búsqueda permite a los usuarios encontrar productos rápida
     - Filtrar la lista completa de productos (todosLosProductos).
     - La búsqueda se realiza por coincidencia en el nombre, descripción y categoría del producto.
 
-5. Autenticación de Usuarios
+---
+    
+### 5. Autenticación de Usuarios
 
 Se implementó un sistema básico de autenticación para diferenciar la experiencia del usuario.
+
+#### Credenciales de inicio de sesión (Login)
+- Nombre: usuario
+- Correo: usuario@mitienda.com
+- Password: 123456
+---
 
 - store/AuthStore.js: Utiliza Pinia para gestionar el estado de sesión (user) y un getter isLoggedIn para determinar si el usuario ha iniciado sesión.
 
@@ -90,3 +98,19 @@ Se implementó un sistema básico de autenticación para diferenciar la experien
 - Navbar.vue: Muestra el enlace "Login" o el mensaje "Hola, `[Nombre]` (Logout)" de forma condicional, utilizando authStore.isLoggedIn.
 
 - Corrección de Errores: Se implementó el encadenamiento opcional (?.) en Navbar.vue (authStore.user?.name) para prevenir errores de tipo TypeError al intentar leer propiedades de un objeto nulo después de cerrar sesión o al cargar la aplicación.
+
+---
+
+### Instalación y Ejecución Local
+
+1. Tener Node.js y npm instalados.
+
+2. Navegar a la carpeta principal del proyecto en el terminal.
+
+3. Ejecutar el siguiente comando para instalar las dependencias:
+npm install
+
+4. AL finalizar la instalación, iniciar el servidor de desarrollo con:
+npm run dev
+
+5. Abrir la URL proporcionada por la terminal (generalmente http://localhost:5173) en el navegador para ver la aplicación en funcionamiento.
