@@ -1,14 +1,24 @@
 import { defineStore } from "pinia";
+import { login as authServiceLogin } from '../services/Auth.js';
 
 export const useAuthStore = defineStore('auth', {
     state: () => ({
-        user: null, // o inicializa con el usuario guardado si existe
+        user: null, 
     }),
     actions: {
-        login(userData) {
-            this.user = userData;
+        async login(credentials) {
+            try {
+                const userData = await authServiceLogin(credentials); 
+                
+                this.user = userData;
+                return true; 
+                
+            } catch (error) {
+                this.user = null;
+                throw error; 
+            }
         },
-        logout(userData) {
+        logout() {
             this.user = null;
         },
     },

@@ -54,7 +54,7 @@
                             <a href="#!" class="text-reset">Regalos Corporativos</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-reset">React</a>
+                            <a href="#!" class="text-reset">Destacados del mes</a>
                         </p> 
                     </div>
 

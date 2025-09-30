@@ -35,7 +35,7 @@ const handleLogin = async () => {
 
 <template>
   <div class="login-bg-container">
-    <img  src="../assets/img/c-3.jpeg" alt="Fondo" class="bg-blur-img img-fluid" />
+    <img src="../assets/img/c-3.jpeg" alt="Fondo" class="bg-blur-img img-fluid" />
     <div class="container mt-5">
       <div class="row justify-content-center">
         <div class="col-md-6">
@@ -88,7 +88,7 @@ const handleLogin = async () => {
 <style scoped>
 .login-bg-container {
   position: relative;
-  min-height: 100%;
+  min-height: 100vh;
   overflow: hidden;
 }
 .bg-blur-img {
@@ -96,10 +96,10 @@ const handleLogin = async () => {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100%;
+  height: 100vh;
   object-fit: cover;
   background-color: black;
-  filter: blur(1px) brightness(0.7);
+  filter: blur(4px) brightness(0.7);
   z-index: 0;
 }
 .container,

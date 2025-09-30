@@ -2,16 +2,16 @@
 import { ref, onMounted, computed } from 'vue';
 const messageTexts = ref([
     {
-        principalText : 'ENVÍO GRATIS',
+        principalText : '🚚ENVÍO GRATIS',
         secondaryText : 'En compras superiores a $60.000'
     },
     {
-        principalText : '3x2 EN GALLETAS',
+        principalText : '🍪3x2 EN GALLETAS',
         secondaryText : 'No te lo pierdas'
     },
     {
-        principalText : 'RETIRA EN TIENDA GRATIS',
-        secondaryText : 'Sin costo adicional'
+        principalText : '🐈 DONAMOS EL 5%',
+        secondaryText : 'A los animalitos'
     },
 ]);
 
@@ -27,7 +27,7 @@ function rotate(){
 }
 
 onMounted(() => {
-    setInterval(rotate, 3500)
+    setInterval(rotate, 3000)
 
 })
 </script>
@@ -36,7 +36,7 @@ onMounted(() => {
   <div class="top-banner">
     <Transition name="fade" mode="out-in">
       <div class="banner-message active" :key="currentIndex">
-        🚚 <span class="banner-highlight">{{ currentMessage.principalText }}</span> {{ currentMessage.secondaryText }}
+        <span class="banner-highlight">{{ currentMessage.principalText }}</span> {{ currentMessage.secondaryText }}
       </div>
     </Transition>
   </div>
