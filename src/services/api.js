@@ -11,7 +11,7 @@ export async function listProducts() {
             descripcion: "Bombones de frambueza con chocolate biter amargo 60%",
             precio: 23990,
             urlImagen: `${host}public/cards/1.jpeg`,
-            stock: 2,
+            stock: 0,
             categoria: "Chocolate amargo",
             etiqueta: "500gr"
         },
@@ -71,7 +71,7 @@ export async function listProducts() {
             descripcion: "Chocolate negro 65% con escamas de sal marina del Atlántico",
             precio: 19750,
             urlImagen: `${host}public/cards/7.jpeg`,
-            stock: 18,
+            stock: 0,
             categoria: "Chocolate negro",
             etiqueta: "150gr"
         },

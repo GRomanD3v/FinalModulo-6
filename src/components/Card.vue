@@ -53,13 +53,15 @@ function agregar() {
 
 //Valores por defecto si no vienen en producto
 const urlImagen = props.producto.urlImagen || 'https://ejemplo.com/pralines-surtidos.jpg';
-const stock = props.producto.stock || 1;
+
 
 // Formatear precio chileno
 function formatoPrecio(precio) {
     if (!precio) return '$0';
     return '$' + precio.toLocaleString('es-CL');
 }
+
+
 
 </script>
 
@@ -87,13 +89,15 @@ function formatoPrecio(precio) {
 
                 <!-- Precio y stock -->
                 <div class="d-flex justify-content-between align-items-center mt-auto">
-                    <h4 class="text-primary">{{ formatoPrecio(producto.precio)}}</h4>
+                    <h4 class="text-primary">{{ formatoPrecio(producto.precio) }}</h4>
                     <small class="text-muted">Stock:{{ producto.stock }}</small>
                 </div>
 
-                <!-- Botón de acción -->
+                <!-- Botón de acción por stock-->
                 <div class="d-grid gap-2 mt-3">
-                    <button class="btn btn-primary btn-sm" @click="agregar">Agregar al carrito</button>
+                    <button class="btn btn-primary btn-sm" @click="agregar" :disabled="producto.stock === 0">
+                        {{ producto.stock === 0 ? 'Sin stock' : 'Agregar al carrito' }}
+                    </button>
                 </div>
             </div>
         </div>
