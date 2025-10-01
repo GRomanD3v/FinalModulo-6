@@ -1,7 +1,7 @@
 <template>
      <section class="product-section m-5">
         <div class="container">
-            <h2 class="text-center section-title mb-5">Lo Más Vendido</h2>
+            <h2 class="text-center section-title mb-5 text-uppercase">Lo Más Vendido</h2>
             
             <div class="row">
                 <!-- Producto 1: Calugas Macizos -->

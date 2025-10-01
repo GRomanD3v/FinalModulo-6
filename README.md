@@ -37,11 +37,15 @@ El componente principal para la visualización es Card.vue, el cual cumple con l
 
 - Estructura Bootstrap: Utiliza las clases card h-100, card-img-top, d-flex flex-column, mt-auto para asegurar que todas las tarjetas tengan la misma altura y que los precios y botones se alineen en la parte inferior.
 
-- Datos: Cada tarjeta recibe un objeto producto a través de props que incluye nombre, descripción, precio, stock, categoría e imagen.
+- Datos: Cada tarjeta (cards) recibe un objeto producto a través de props que incluye nombre, descripción, precio, stock, categoría e imagen.
 
 - Formato de Precio: El precio se formatea utilizando toLocaleString('es-CL') para asegurar el formato chileno (CLP).
 
-- Botón de Acción: El botón "Añadir al Carrito" está deshabilitado automáticamente cuando el stock del producto es 0. 
+- Botón de Acción: El botón "Añadir al Carrito" se deshabilita automáticamente cuando el stock del producto es 0.
+
+### 1.1 Modal
+
+- Botón Ver Detalle: El botón "Ver Detalle" activa un modal que muestra información completa y detallada del producto seleccionado. Este componente recibe los datos del producto a través de props y se renderiza condicionalmente utilizando v-if para controlar su visualización.
 
 ---
 ### 2. Gestión de Estado y Persistencia (Pinia)

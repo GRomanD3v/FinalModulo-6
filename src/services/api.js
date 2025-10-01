@@ -145,7 +145,7 @@ export async function listProducts() {
             urlImagen: `${host}public/cards/12.jpeg`,
             stock: 10,
             categoria: "Bombones",
-            etiqueta: "18 unidades",
+            etiqueta: "16 unidades",
             marca: "Vangod",
             descripcion2: "Bombones surtidos con forma de calabaza y fantasmas, rellenos de una selección de licores finos. Disfruta del intenso coñac, el ahumado whisky y el dulce ron, en una experiencia única para adultos. El detalle perfecto para sorprender en tu fiesta de Halloween."
         }
