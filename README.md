@@ -5,7 +5,7 @@
 - Daniela Garrido 
 - Gonzalo Román
 
-### Ruta: https://github.com/GRomanD3v/FinalModulo-6.git
+### Ruta: https://github.com/GRomanD3v/FinalModulo-6/tree/abp3
 
 ---
 
