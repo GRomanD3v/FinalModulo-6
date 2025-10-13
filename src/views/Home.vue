@@ -1,66 +1,75 @@
 <script setup>
-import { ref, computed, onMounted } from 'vue';
+import { onMounted } from 'vue';
+import { storeToRefs } from 'pinia';
+import { useProductosStore } from '../store/productos';
 import Carrousel from '../components/Carrousel.vue';
 import SearchBar from '../components/SearchBar.vue';
 import Destacados from '../components/Destacados.vue';
 import Products from "../components/Products.vue";
 import Ayuda from '../components/Ayuda.vue';
 
-//importar la funcion de la API 
-import { listProducts } from '../services/api';
 const props = defineProps({
 	carrito: Array,
 	onAgregarAlCarrito: Function
-});
-// Definir estados reactivos
-const todosLosProductos = ref([]);
-const terminoBusqueda = ref('');
+ });
 
-//Cargar los productos al iniciar el componente
-onMounted(async ()=> {
-	todosLosProductos.value = await listProducts();
-});
+//Obtener instancia del store
+const productosStore = useProductosStore();
 
-// Función para manejar el evento de la barra de búsqueda
-const handleBusqueda = (termino) => {
-	// El término de búsqueda se actualiza cada vez que el SearchBar lo emite
-	terminoBusqueda.value = termino;
-};
-
-// Propiedad Computada para el Filtrado
-const productosFiltrados = computed(()=>{
-	const termino = terminoBusqueda.value.toLowerCase().trim();
-	// Si el término está vacío, muestra toda la lista
-	if (!termino) {
-		return todosLosProductos.value;
-	}
-	// Filtra la lista original de productos
-	return todosLosProductos.value.filter(producto => {
-		// La búsqueda se realiza en el nombre, la descripción, o la categoría
-		return producto.nombre.toLowerCase().includes(termino) ||
-			   producto.descripcion.toLowerCase().includes(termino) ||
-			   producto.categoria.toLowerCase().includes(termino);
-	});
+// 2. Usar storeToRefs para desestructurar propiedades reactivas (Getters y State)
+// Esto asegura que sigan siendo reactivos cuando los uses en el template.
+const {
+	productos,
+	productosFiltrados,
+	isLoading,
+	error,
+	conteoProductos,
+	stockTotal,
+	conteoResultadosBusqueda,
+} = storeToRefs(productosStore);
+// 3. Obtener la acción para la carga inicial (no es reactiva, no necesita storeToRefs)
+const { fetchProductos } = productosStore;
+// 4. Llamar a la acción de carga al montar el componente
+onMounted(() => {
+	// Aquí disparamos la carga asíncrona de productos
+	fetchProductos();
 });
 </script>
 
 <template>
+    <Carrousel />
+    <Destacados />
+    <h2 class="text-center m-4">Nuestros Productos</h2>
 
-	<Carrousel />
-	<Destacados />
-	<h2 class="text-center m-4">Nuestros Productos</h2>
+    <SearchBar class="mb-5" />
 
-	<SearchBar class="mb-5"  @buscar="handleBusqueda" />
-
-	<div class="container">
-		
-		<div>
-			<Products 
-			:productos="productosFiltrados"
-			@agregar-al-carrito="props.onAgregarAlCarrito" />
-		</div>
-	</div>
-	<Ayuda/>
-
-
+    <div class="container">
+        
+        <!-- Contadores de Estado Global (Se muestran siempre, excepto durante la carga) -->
+        <div v-if="!isLoading" class="d-flex justify-content-between p-3 mb-4 bg-light rounded-3 shadow-sm">
+            <p class="mb-0 text-dark fw-bold">
+                Total de Productos Registrados: <span class="badge bg-primary">{{ conteoProductos }}</span>
+            </p>
+            <p class="mb-0 text-dark fw-bold">
+                Stock Total Disponible: <span class="badge bg-success">{{ stockTotal }} unidades</span>
+            </p>
+        </div>
+        
+        <div v-if="isLoading" class="text-center p-5">
+            <p>Cargando productos...</p>
+        </div>
+        <div v-else-if="error" class="text-center p-5 text-danger">
+            <p>{{ error }}</p>
+        </div>
+        <div v-else>
+            <p class="text-muted text-center fw-semibold">
+                Mostrando {{ conteoResultadosBusqueda }} productos encontrados.
+            </p>
+            <Products 
+                :productos="productosFiltrados"
+                @agregar-al-carrito="props.onAgregarAlCarrito" 
+            />
+        </div>
+    </div>
+    <Ayuda/>
 </template>

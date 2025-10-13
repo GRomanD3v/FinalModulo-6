@@ -8,7 +8,7 @@
                 <div class="col-md-6 col-lg-4">
                     <div class="card product-card">
                         <div class="product-img-container">
-                            <img src="/public/cards/12.jpeg" alt="Calugas Macizos" class="product-img">
+                            <img src="/cards/12.jpeg" alt="Calugas Macizos" class="product-img">
                             <div class="product-overlay">
                                 <div class="overlay-content">
                                     <h5 class="product-title">Bombones hallowen</h5>

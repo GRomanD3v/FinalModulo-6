@@ -81,7 +81,7 @@ const contadorCarrito = computed(() =>
     <Navbar :contadorCarrito="contadorCarrito" :carrito="carrito" :total="totalCarrito" @eliminar="eliminarDelCarrito"
         @vaciar="vaciarCarrito" @comprar="comprarCarrito" @aumentar="aumentarCantidad" @disminuir="disminuirCantidad" />
     <RouterView v-slot="{ Component }">
-        <component :is="Component" :carrito="Carrito" :onAgregarAlCarrito="agregarAlCarrito" />
+        <component :is="Component" :carrito="carrito" :onAgregarAlCarrito="agregarAlCarrito" />
     </RouterView>
     <FooterComponent />
 </template>

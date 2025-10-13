@@ -1,4 +1,4 @@
-# Exámen Final Módulo 6 
+# M7-ABP3 Almacenamiento de estado en Pinia
 ## DESARROLLO DE INTERFACES INTERACTIVAS CON FRAMEWORK VUE: CHOCOLATERÍA VANGOD
 ### Integrantes: 
 - María Teresa De La Fuente
@@ -7,86 +7,67 @@
 
 ### Ruta: https://github.com/GRomanD3v/FinalModulo-6.git
 
-- Objetivo
-Implementar una interfaz de usuario web con elementos interactivos
-utilizando el framework Vue.js para dar solución a un requerimiento
-
----
-Este documento detalla la implementación de los requisitos principales del proyecto de e-commerce utilizando Vue 3 y Bootstrap 5, enfocado en el despliegue de productos, la gestión del estado del carrito de compras, la funcionalidad de búsqueda y la autenticación de usuarios.
-
 ---
 
-### TECNOLOGÍAS Y ARQUITECTURA
+## Proyecto: Sistema de Gestión de Productos y Buscador (Ecommerce Demo)
+Este proyecto es un sistema de listado, conteo y filtrado de inventario desarrollado con Vue 3 y Pinia, cumpliendo todos los requisitos de estado y lógica centralizada.
 
-El proyecto se construyó bajo una arquitectura moderna de frontend:
-- Framework: Vue.js 3 (Composition API con `<script setup>`).
-- Estilos: Bootstrap 5 (Clases y componentes estándar).
-- Gestión de Estado: Pinia (para persistencia del carrito y estado de autenticación).
-- Ruteo: Vue Router (para navegación entre Home y Login).
+### Stack Tecnológico
+Tecnología
 
----
+- Vue 3 Framework principal para la construcción de la interfaz (Composition API).
 
-### REQUISITOS CUMPLIDOS
+- Pinia Gestión de estado centralizada (sustituyendo a Vuex).
 
-A continuación, se describe cómo se implementó cada requisito fundamental del proyecto:
+- Vue Router Manejo de las rutas y vistas del sitio.
 
----
-### 1. Despliegue de Productos y Diseño
+- Bootstrap Librería CSS utilizada para un diseño limpio y responsivo.
 
-El componente principal para la visualización es Card.vue, el cual cumple con la estructura visual solicitada:
+- Async/Await Manejo de operaciones asíncronas para la carga de datos (simulación de una API).
 
-- Estructura Bootstrap: Utiliza las clases card h-100, card-img-top, d-flex flex-column, mt-auto para asegurar que todas las tarjetas tengan la misma altura y que los precios y botones se alineen en la parte inferior.
+### Instrucciones de Ejecución
+Para iniciar el proyecto en un entorno local, sigue estos pasos:
 
-- Datos: Cada tarjeta recibe un objeto producto a través de props que incluye nombre, descripción, precio, stock, categoría e imagen.
+Instalar dependencias:
 
-- Formato de Precio: El precio se formatea utilizando toLocaleString('es-CL') para asegurar el formato chileno (CLP).
+```npm install```
 
-- Botón de Acción: El botón "Añadir al Carrito" está deshabilitado automáticamente cuando el stock del producto es 0. 
 
----
-### 2. Gestión de Estado y Persistencia (Pinia)
+Ejecutar el servidor de desarrollo:
 
-Se utilizó Pinia para centralizar la información clave del usuario y el carrito.
-- store/carrito.js: Implementa un Store que gestiona la lista de productos (items) del carrito.
-    - Persistencia: Utiliza localStorage mediante las acciones guardar() y cargar() para que el carrito mantenga su estado incluso si el usuario recarga la página.
+```npm run dev```
 
-- App.vue: Es responsable de cargar el carrito desde Pinia al montar (onMounted) y de guardar los cambios automáticamente mediante un watcher (watch) cada vez que el contenido del carrito se modifica.
 
----
+### Acceso:
+Abre la URL proporcionada en la consola (usualmente http://localhost:5173/).
 
-### 3. Funcionalidad de Carrito de Compras
-La lógica del carrito está definida en App.vue y se muestra en el componente CartDetail.vue (dentro del offcanvas de la barra de navegación).
+✅ Cumplimiento de Requisitos del Proyecto (Detalle)
+Se ha utilizado el patrón Setup Store de Pinia para declarar, inicializar y gestionar todas las variables del proyecto de forma reactiva, centralizando la lógica en un único lugar.
 
-- Agregar Producto: La función agregarAlCarrito(producto) en App.vue verifica si el producto ya existe. Si existe, aumenta la cantidad; si no, lo agrega con cantidad: 1.
+1. Estructura y Estilo
+Estructura de Vistas: Se implementó una vista principal (Home.vue) y un menú de navegación (Navbar) con vue-router para la navegación.
 
-- Detalle y Gestión: CartDetail.vue maneja eventos (emit) para:
-    - aumentar / disminuir la cantidad.
-    - eliminar un ítem por índice.
-    - vaciar y comprar (con validación de carrito vacío).
+Diseño y Estilo: Se utilizó Bootstrap para garantizar una interfaz limpia, moderna y adaptable.
 
-- Contador y Total: El contador del carrito (contadorCarrito) y el total (totalCarrito) son propiedades computed en App.vue, asegurando que se actualicen reactivamente con cada cambio.
+2. Gestión de Estado (Pinia)
+Uso del State Centralizado: Todas las variables de datos clave (productos, terminoBusqueda, isLoading) se gestionan mediante el patrón State de Pinia. Se utiliza ref() para crear variables reactivas.
 
----
+Propiedades Computadas: Se utiliza la función computed dentro del store para los filtrados, conteos y estados derivados. Se accede a los Getters desde los componentes usando storeToRefs para mantener la reactividad.
+(Nota: El requisito de usar Vuex se sustituyó por Pinia, el estándar actual de Vue 3).
 
-### 4. Búsqueda y Filtrado de Productos
+3. Funcionalidad de Inventario
+Búsqueda y Filtrado: La búsqueda por nombre y otros campos es instantánea.
 
-La funcionalidad de búsqueda permite a los usuarios encontrar productos rápidamente:
+Lógica: Se utiliza el Getter productosFiltrados, el cual se re-ejecuta automáticamente cada vez que el terminoBusqueda cambia.
 
-- SearchBar.vue: Componente encargado de capturar el texto de búsqueda (v-model) y emitir el término (@buscar) al presionar Enter o el botón de la lupa.
+Mostrar Listado de Productos: Se muestran los campos: código, nombre, stock, y precio de los productos disponibles.
 
-- Home.vue: Recibe el término de búsqueda (terminoBusqueda) y utiliza una propiedad productosFiltrados (computed) para:
-    
-    - Filtrar la lista completa de productos (todosLosProductos).
-    - La búsqueda se realiza por coincidencia en el nombre, descripción y categoría del producto.
+Lógica: El componente ```<Products>``` consume directamente el Getter productosFiltrados.
 
-5. Autenticación de Usuarios
+Conteo de Productos Totales: Muestra el número total de ítems únicos registrados en el inventario.
 
-Se implementó un sistema básico de autenticación para diferenciar la experiencia del usuario.
+Lógica: Se utiliza el Getter conteoProductos.
 
-- store/AuthStore.js: Utiliza Pinia para gestionar el estado de sesión (user) y un getter isLoggedIn para determinar si el usuario ha iniciado sesión.
+Stock Total: Muestra la suma total del stock de todas las unidades de productos registradas.
 
-- Login.vue: Permite ingresar credenciales (hardcodeadas en services/Auth.js) y al lograr el login exitoso, guarda el usuario en Pinia y redirige a la página principal (/).
-
-- Navbar.vue: Muestra el enlace "Login" o el mensaje "Hola, `[Nombre]` (Logout)" de forma condicional, utilizando authStore.isLoggedIn.
-
-- Corrección de Errores: Se implementó el encadenamiento opcional (?.) en Navbar.vue (authStore.user?.name) para prevenir errores de tipo TypeError al intentar leer propiedades de un objeto nulo después de cerrar sesión o al cargar la aplicación.
+Lógica: Se utiliza el Getter stockTotal, el cual usa el método reduce para sumar el campo stock de todos los productos.

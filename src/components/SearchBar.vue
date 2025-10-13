@@ -1,12 +1,13 @@
 <script setup>
 import { ref } from 'vue';
+import { useProductosStore } from '../store/productos';
 
-const emit = defineEmits(['buscar']);
-
-const busqueda = ref("");
-
+// Obtener instancia de pinia 
+const productosStore = useProductosStore();
+const busqueda = ref('');
+// Método para realizar la búsqueda
 const realizarBusqueda = () => {
-    emit('buscar', busqueda.value);
+    productosStore.setTerminoBusqueda(busqueda.value);
 };
 </script>
 
@@ -20,6 +21,7 @@ const realizarBusqueda = () => {
                     <input type="text" 
                             class="form-control" placeholder="Buscar productos..."
                             v-model="busqueda"
+                            @input="realizarBusqueda"
 
                             @keyup.enter="realizarBusqueda"
                             aria-label="buscador" 
